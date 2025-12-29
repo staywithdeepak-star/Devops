@@ -1,0 +1,47 @@
+##Advanced DevOps Tools- Commonly used in CI/CD and complex debugging.
+Command,Usage
+git stash,"Temporarily ""hides"" uncommitted changes so you can switch branches."
+git stash pop,Brings back your hidden (stashed) changes.
+git cherry-pick [id],Grabs one specific commit from another branch and applies it here.
+git rebase [branch],Re-writes history by placing your commits on top of another branch.
+git blame [file],Shows who edited every single line of a file and when.
+git diff,Shows exactly what code changed between the working directory and staging.
+
+##Setup & Configuration -Used to set up your identity and initialize new projects.
+Command,Usage
+"git config --global user.name ""Your Name""",Sets the name attached to your commits.
+"git config --global user.email ""email@example.com""",Sets the email attached to your commits.
+git init,Initializes a brand new local Git repository.
+git clone [url],Downloads an existing repository from a remote server (like GitHub).
+
+##The Daily Workflow (Stage & Commit) - The "bread and butter" commands you'll use every few minutes.
+Command,Usage
+git status,"Shows which files are modified, staged, or untracked."
+git add [file],Moves a specific file to the Staging Area.
+git add .,Stages all modified and new files at once.
+"git commit -m ""message""",Saves your staged snapshot to the local history.
+git commit --amend,Edit the last commit message or add forgotten files to it.
+
+##Undoing & Fixing Mistakes -The "Emergency" toolkit when things go wrong.
+Command,Usage
+git log --oneline,Shows a brief history of commits (useful for finding IDs).
+git revert [commit-id],Creates a new commit that undoes the changes of a previous one.
+git reset --soft HEAD~1,Undoes the last commit but keeps your work in the staging area.
+git reset --hard [commit-id],DANGER: Wipes away all changes and reverts to a specific state.
+git checkout -- [file],Discards local changes to a single file (reverts to last commit).
+
+
+##Branching & Merging -- Essential for working on features without breaking the "Main" code.
+Command,Usage
+git branch,Lists all local branches.
+git checkout -b [name],Creates a new branch and switches to it immediately.
+git switch [name],Switches to an existing branch (modern alternative to checkout).
+git merge [branch],Merges the specified branch into your current branch.
+git branch -d [name],Deletes a local branch (use -D to force delete).
+
+##Remote Synchronization --How you share code with your team.
+Command,Usage
+git remote add origin [url],Links your local repo to a remote server.
+git push origin [branch],Uploads your local commits to the remote repository.
+git pull,Downloads and merges changes from the remote to your local.
+git fetch,Downloads remote changes without merging them (safe way to check).
